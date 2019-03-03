@@ -12,6 +12,9 @@ body {
     color: #ffffff;
     margin: 0;
 }
+li {
+    list-style-type: none;
+}
 
 a {
     text-decoration: none;
@@ -55,27 +58,22 @@ a {
     justify-self: end;
 }
 
+.menu-list {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
 .menu-list li {
-    display: inline-block; /* что-то непонятное с дропдаун */
-    list-style-type: none;
+    display: inline-block; /* fix it */
     font-size: 14px;
     color: #ffffff;
     text-transform: uppercase;
     padding-right: 40px;
 }
 
-.menu-list li:first-child {
-    padding-right: 25px;
+.dropdown a {
+    margin-left: -16px;
 }
-
-.menu-list li:last-child {
-    padding-right: 0;
-}
-
-.menu-list li:nth-child(7) {
-    padding-right: 30px;
-}
-
 
 .active-page {
     background: #62a29e;
@@ -101,6 +99,8 @@ a {
     z-index: 1;
     font-size: 13px;
     text-transform: none;
+    padding-left: 16px;
+    margin: 10px 0 0 -16px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -127,32 +127,40 @@ a {
 }
 
 /* container */
-
 .slider-container {
     height: 500px;
     background-color: #7f8c8c;
-}
-
-.slider-indicators {
-    height: 50px;
+    overflow: hidden;
 }
 
 .icon-color {
     color: white;
 }
+
 .slider-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .prev {
-    padding: 15px 18px 15px 0;
+    padding: 15px 18px 15px 18px;
+    margin-left: -5px;
     background-color: #e8645a;
-    border-bottom: 2px #e2534b solid;
+    border-bottom: 3px #e2534b solid;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
 .next {
-    border: 2px red solid;
+    padding: 15px 18px 15px 18px;
+    margin-right: -5px;
+    background-color: #e8645a;
+    border-bottom: 3px #e2534b solid;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
 .slider-text {
     font-family: 'Open Sans';
     width: 470px;
@@ -162,17 +170,250 @@ a {
 
 .slider-text h1 {
     text-transform: uppercase;
-    background: #e2534b;
-    border-radius: 5px;
+    display: inline-block;
     font-weight: 700;
     font-size: 40px;
-    border: 2px red solid;
-    display: block;
+    background: #e2534b;
+    border-radius: 5px;
+    padding: 14px 12px;
 }
 
 .slider-text p {
     display: block;
-
+    width: inherit;
     font-size: 16px;
-    border: 2px red solid;
+    line-height: 25px;
+    padding: 12px 0;
+    background: #3f4646;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.slider-indicators {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+.panel {
+    margin: 12px auto 0 auto;
+    width: inherit;
+    display: inline-block;
+    text-align: center;
+}
+
+.slider-indicators .panel div {
+    width: 60px;
+    height: 5px;
+    background-color: #b0b8b9;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/*section intro*/
+#intro {
+    background-color: #f3f3f3;
+}
+
+.intro {
+    margin: 0 auto;
+    height: 100px;
+    max-width: 1170px;
+    background-color: #ececec;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro-text {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.intro span {
+    color: #869292;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Open Sans';
+}
+
+.intro p {
+    color: #777777;
+    font-size: 13px;
+    font-family: 'Open Sans';
+    margin-top: 10px;
+}
+
+.btn {
+    height: 50px;
+    width: 200px;
+    background-color: #e8645a;
+    border-radius: 5px;
+    display: flex;
+    margin-top: 25px;
+    margin-right: 35px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 700;
+}
+
+.btn span {
+    display: inline-block;
+    margin: auto;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/*section services*/
+#services {
+    background-color: #f3f3f3;
+}
+
+.services {
+    max-width: 1170px;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.services-items {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.services-item {
+    height: 312px;
+    width: 270px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    border-bottom: 3px solid #e5e6e6;
+}
+
+div.services-item:hover {
+    background-color: #e5e6e6;
+}
+
+.item-icon {
+    text-align: center;
+    color: #66b5b4;
+    padding: 50px 0 20px 0;
+}
+
+.item-title {
+    color: #8f9a9a;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.item-text {
+    color: #a2a2a2;
+    font-size: 13px;
+    font-family: 'Open Sans';
+    text-align: center;
+    padding: 0px 20px 0 20px;
+}
+
+.services-btn {
+    position: relative;
+    background-color: #76c7c0;
+    margin: 0 auto;
+    border-bottom: 3px solid #62bdbd;
+    text-transform: lowercase;
+}
+
+.item-btn {
+    margin-top: -32px;
+}
+
+.item-btn span {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.item {
+    display: block;
+}
+
+.active-item {
+    background-color: #ffffff;
+}
+
+.active-item-icon i {
+    color: #e2534b;
+}
+
+.active-item-title {
+    color: #7f8c8c;
+}
+
+.active-item-text {
+    color: #777777;
+}
+
+.active-item-btn {
+    background-color: #e8645a;
+    border-bottom: 3px #e2534b solid;
+}
+
+/*section about*/
+.about-intro {
+    height: 381px;
+    background-color: #ececec;
+    border: solid transparent;
+    border-width: 19px 0 0;
+    border-image: url('../images/aboutBorder.png') 19 repeat;
+    padding-top: 56px;
+}
+.about {
+
+}
+.about-intro-text {
+    max-width: 1170px;
+    text-align: center;
+    margin: 0 auto;
+}
+.about-intro-text span{
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #e1524b;
+    font-family: 'Open Sans';
+    font-weight: 700;
+}
+.about-intro-text p {
+    margin-top: 10px;
+    color: #777777;
+    font-size: 13px;
+    font-family: 'Open Sans';
+}
+.about-content {
+    background-color: #f3f3f3;
+    height: 475px;
+}
+.about-content-text {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.why-choose {
+    max-width: 270px;
+}
+.why-choose-title {
+    color: #7f8c8c;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+}
+.why-choose-list {
+    color: #777777;
+    font-size: 13px;
+    font-family: 'Open Sans';
+}
+.why-choose-list i {
+    color: #e1524b;
 }
